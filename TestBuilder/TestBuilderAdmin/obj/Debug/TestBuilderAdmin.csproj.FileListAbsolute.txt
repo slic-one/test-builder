@@ -1,0 +1,9 @@
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe.config
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.pdb
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csprojResolveAssemblyReference.cache
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Properties.Resources.resources
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.exe
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.pdb
+c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionCreatorForm.resources
