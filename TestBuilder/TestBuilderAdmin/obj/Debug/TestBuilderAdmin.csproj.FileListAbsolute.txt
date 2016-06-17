@@ -6,4 +6,4 @@ c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin
 c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache
 c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.exe
 c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.pdb
-c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionCreatorForm.resources
+C:\Users\SliC\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionEditorForm.resources

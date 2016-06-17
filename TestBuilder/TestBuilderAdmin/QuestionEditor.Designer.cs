@@ -30,10 +30,10 @@
         {
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.buttonAddAnswer = new System.Windows.Forms.Button();
-            this.listBoxAnswers = new System.Windows.Forms.ListBox();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.checkBoxRightAnswer = new System.Windows.Forms.CheckBox();
             this.buttonSaveQuestion = new System.Windows.Forms.Button();
+            this.listViewAnswers = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // textBoxQuestion
@@ -57,17 +57,6 @@
             this.buttonAddAnswer.Text = "Add answer";
             this.buttonAddAnswer.UseVisualStyleBackColor = true;
             this.buttonAddAnswer.Click += new System.EventHandler(this.buttonAddAnswer_Click);
-            // 
-            // listBoxAnswers
-            // 
-            this.listBoxAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxAnswers.FormattingEnabled = true;
-            this.listBoxAnswers.Location = new System.Drawing.Point(13, 109);
-            this.listBoxAnswers.Name = "listBoxAnswers";
-            this.listBoxAnswers.Size = new System.Drawing.Size(348, 147);
-            this.listBoxAnswers.TabIndex = 2;
             // 
             // textBoxAnswer
             // 
@@ -96,19 +85,32 @@
             this.buttonSaveQuestion.Location = new System.Drawing.Point(467, 235);
             this.buttonSaveQuestion.Name = "buttonSaveQuestion";
             this.buttonSaveQuestion.Size = new System.Drawing.Size(94, 23);
-            this.buttonSaveQuestion.TabIndex = 4;
+            this.buttonSaveQuestion.TabIndex = 5;
             this.buttonSaveQuestion.Text = "Save question";
             this.buttonSaveQuestion.UseVisualStyleBackColor = true;
+            this.buttonSaveQuestion.Click += new System.EventHandler(this.buttonSaveQuestion_Click);
+            // 
+            // listViewAnswers
+            // 
+            this.listViewAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewAnswers.Location = new System.Drawing.Point(12, 109);
+            this.listViewAnswers.Name = "listViewAnswers";
+            this.listViewAnswers.Size = new System.Drawing.Size(349, 147);
+            this.listViewAnswers.TabIndex = 4;
+            this.listViewAnswers.UseCompatibleStateImageBehavior = false;
+            this.listViewAnswers.View = System.Windows.Forms.View.List;
             // 
             // QuestionEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 270);
+            this.Controls.Add(this.listViewAnswers);
             this.Controls.Add(this.buttonSaveQuestion);
             this.Controls.Add(this.checkBoxRightAnswer);
             this.Controls.Add(this.textBoxAnswer);
-            this.Controls.Add(this.listBoxAnswers);
             this.Controls.Add(this.buttonAddAnswer);
             this.Controls.Add(this.textBoxQuestion);
             this.MinimumSize = new System.Drawing.Size(320, 180);
@@ -123,10 +125,10 @@
 
         private System.Windows.Forms.TextBox textBoxQuestion;
         private System.Windows.Forms.Button buttonAddAnswer;
-        private System.Windows.Forms.ListBox listBoxAnswers;
         private System.Windows.Forms.TextBox textBoxAnswer;
         private System.Windows.Forms.CheckBox checkBoxRightAnswer;
         private System.Windows.Forms.Button buttonSaveQuestion;
+        private System.Windows.Forms.ListView listViewAnswers;
     }
 }
 

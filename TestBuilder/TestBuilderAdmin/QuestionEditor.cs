@@ -19,8 +19,20 @@ namespace TestBuilderAdmin
 
         private void buttonAddAnswer_Click(object sender, EventArgs e)
         {
-            listBoxAnswers.Items.Add(textBoxAnswer.Text);
+            var answer = new Answer(checkBoxRightAnswer.Checked, textBoxAnswer.Text);
+
+            listViewAnswers.Items.Add(answer.Text);
+            if (checkBoxRightAnswer.Checked)
+                listViewAnswers.Items[listViewAnswers.Items.Count-1].ForeColor = Color.Green;
+
+            checkBoxRightAnswer.Checked = false;
             textBoxAnswer.Clear();
+            textBoxAnswer.Focus();
+        }
+
+        private void buttonSaveQuestion_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
