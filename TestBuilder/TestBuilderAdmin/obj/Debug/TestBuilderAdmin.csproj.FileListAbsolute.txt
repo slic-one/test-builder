@@ -7,3 +7,12 @@ c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin
 c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.exe
 c:\users\slic\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.pdb
 C:\Users\SliC\documents\visual studio 2013\Projects\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionEditorForm.resources
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe.config
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.exe
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.pdb
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.pdb
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csprojResolveAssemblyReference.cache
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionEditorForm.resources
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Properties.Resources.resources
+C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache

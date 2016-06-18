@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Answer.cs" />
+    <Compile Include="Question.cs" />
     <Compile Include="QuestionEditor.cs">
       <SubType>Form</SubType>
     </Compile>
