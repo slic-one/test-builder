@@ -40,16 +40,16 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPageAnswerEditor = new System.Windows.Forms.TabPage();
             this.tabPageDocumentEditor = new System.Windows.Forms.TabPage();
-            this.listBoxQuestions = new System.Windows.Forms.ListBox();
-            this.listViewAnswersCopy = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listViewAnswersCopy = new System.Windows.Forms.ListView();
+            this.listBoxQuestions = new System.Windows.Forms.ListBox();
+            this.tabPageAnswerEditor = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
-            this.tabPageAnswerEditor.SuspendLayout();
             this.tabPageDocumentEditor.SuspendLayout();
+            this.tabPageAnswerEditor.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxQuestion
@@ -141,13 +141,13 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // aboutToolStripMenuItem
@@ -159,6 +159,9 @@
             // tabControl
             // 
             this.tabControl.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPageDocumentEditor);
             this.tabControl.Controls.Add(this.tabPageAnswerEditor);
             this.tabControl.Location = new System.Drawing.Point(0, 27);
@@ -167,6 +170,62 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(674, 414);
             this.tabControl.TabIndex = 7;
+            // 
+            // tabPageDocumentEditor
+            // 
+            this.tabPageDocumentEditor.Controls.Add(this.label2);
+            this.tabPageDocumentEditor.Controls.Add(this.label1);
+            this.tabPageDocumentEditor.Controls.Add(this.listViewAnswersCopy);
+            this.tabPageDocumentEditor.Controls.Add(this.listBoxQuestions);
+            this.tabPageDocumentEditor.Location = new System.Drawing.Point(23, 4);
+            this.tabPageDocumentEditor.Name = "tabPageDocumentEditor";
+            this.tabPageDocumentEditor.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDocumentEditor.Size = new System.Drawing.Size(647, 406);
+            this.tabPageDocumentEditor.TabIndex = 1;
+            this.tabPageDocumentEditor.Text = "Document editor";
+            this.tabPageDocumentEditor.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(343, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Answers of the selected question";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Questions in this document";
+            // 
+            // listViewAnswersCopy
+            // 
+            this.listViewAnswersCopy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewAnswersCopy.Location = new System.Drawing.Point(331, 19);
+            this.listViewAnswersCopy.Name = "listViewAnswersCopy";
+            this.listViewAnswersCopy.Size = new System.Drawing.Size(310, 380);
+            this.listViewAnswersCopy.TabIndex = 5;
+            this.listViewAnswersCopy.UseCompatibleStateImageBehavior = false;
+            this.listViewAnswersCopy.View = System.Windows.Forms.View.List;
+            // 
+            // listBoxQuestions
+            // 
+            this.listBoxQuestions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxQuestions.FormattingEnabled = true;
+            this.listBoxQuestions.Location = new System.Drawing.Point(6, 19);
+            this.listBoxQuestions.Name = "listBoxQuestions";
+            this.listBoxQuestions.Size = new System.Drawing.Size(319, 381);
+            this.listBoxQuestions.TabIndex = 0;
+            this.listBoxQuestions.SelectedIndexChanged += new System.EventHandler(this.listBoxQuestions_SelectedIndexChanged);
             // 
             // tabPageAnswerEditor
             // 
@@ -184,59 +243,6 @@
             this.tabPageAnswerEditor.Text = "Answers editor";
             this.tabPageAnswerEditor.UseVisualStyleBackColor = true;
             // 
-            // tabPageDocumentEditor
-            // 
-            this.tabPageDocumentEditor.Controls.Add(this.label2);
-            this.tabPageDocumentEditor.Controls.Add(this.label1);
-            this.tabPageDocumentEditor.Controls.Add(this.listViewAnswersCopy);
-            this.tabPageDocumentEditor.Controls.Add(this.listBoxQuestions);
-            this.tabPageDocumentEditor.Location = new System.Drawing.Point(23, 4);
-            this.tabPageDocumentEditor.Name = "tabPageDocumentEditor";
-            this.tabPageDocumentEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDocumentEditor.Size = new System.Drawing.Size(647, 406);
-            this.tabPageDocumentEditor.TabIndex = 1;
-            this.tabPageDocumentEditor.Text = "Document editor";
-            this.tabPageDocumentEditor.UseVisualStyleBackColor = true;
-            // 
-            // listBoxQuestions
-            // 
-            this.listBoxQuestions.FormattingEnabled = true;
-            this.listBoxQuestions.Location = new System.Drawing.Point(6, 19);
-            this.listBoxQuestions.Name = "listBoxQuestions";
-            this.listBoxQuestions.Size = new System.Drawing.Size(319, 381);
-            this.listBoxQuestions.TabIndex = 0;
-            this.listBoxQuestions.SelectedIndexChanged += new System.EventHandler(this.listBoxQuestions_SelectedIndexChanged);
-            // 
-            // listViewAnswersCopy
-            // 
-            this.listViewAnswersCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewAnswersCopy.Location = new System.Drawing.Point(331, 19);
-            this.listViewAnswersCopy.Name = "listViewAnswersCopy";
-            this.listViewAnswersCopy.Size = new System.Drawing.Size(310, 380);
-            this.listViewAnswersCopy.TabIndex = 5;
-            this.listViewAnswersCopy.UseCompatibleStateImageBehavior = false;
-            this.listViewAnswersCopy.View = System.Windows.Forms.View.List;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Questions in this document";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(343, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Answers of the selected question";
-            // 
             // QuestionEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,10 +257,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl.ResumeLayout(false);
-            this.tabPageAnswerEditor.ResumeLayout(false);
-            this.tabPageAnswerEditor.PerformLayout();
             this.tabPageDocumentEditor.ResumeLayout(false);
             this.tabPageDocumentEditor.PerformLayout();
+            this.tabPageAnswerEditor.ResumeLayout(false);
+            this.tabPageAnswerEditor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
