@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TestBuilderAdmin
 {
@@ -17,11 +18,15 @@ namespace TestBuilderAdmin
 
         List<Answer> currentAnswers = new List<Answer>();
 
-        public QuestionEditorForm()
+        public QuestionEditorForm(bool userIsAdmin)
         {
             InitializeComponent();
-
             listViewAnswersCopy = listViewAnswers;
+            if(!userIsAdmin)
+            {
+                addUserToolStripMenuItem.Enabled = false;
+                showLogsToolStripMenuItem.Enabled = false;
+            }
         }
 
         private void buttonAddAnswer_Click(object sender, EventArgs e)
@@ -58,6 +63,23 @@ namespace TestBuilderAdmin
                 if (el.IsRightAnswer)
                     listViewAnswersCopy.Items[listViewAnswersCopy.Items.Count - 1].ForeColor = Color.Green;
             }
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewUserForm addUser = new AddNewUserForm();
+            addUser.ShowDialog();
+        }
+
+        private void showLogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string logs;
+                using (StreamReader reader = new StreamReader("logHistory.txt"))
+                {
+                    logs = reader.ReadToEnd();
+                }
+            MessageBox.Show(logs);  
         }
     }
 }

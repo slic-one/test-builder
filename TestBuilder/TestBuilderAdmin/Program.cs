@@ -16,7 +16,9 @@ namespace TestBuilderAdmin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuestionEditorForm());
+            Application.Run(new Autorization());
+            /////login: admin
+            /////password: 111  
         }
     }
 }

@@ -16,3 +16,13 @@ C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilde
 C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionEditorForm.resources
 C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Properties.Resources.resources
 C:\Users\SliC\Desktop\GitStuff\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe.config
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.exe
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.pdb
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.pdb
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Autorization.resources
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionEditorForm.resources
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Properties.Resources.resources
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.AddNewUserForm.resources
