@@ -79,7 +79,9 @@ namespace TestBuilderAdmin
                 }
 
                 xQuestion.Add(xAnswers);
+                xQuestions.Add(xQuestion);
             }
+            xmlDocument.Add(xQuestions);
 
             xmlDocument.Save(fileLocation);
         }

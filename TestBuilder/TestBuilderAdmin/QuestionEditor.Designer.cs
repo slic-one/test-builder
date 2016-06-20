@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxQuestion = new System.Windows.Forms.TextBox();
+            this.textBoxQuestionEditor = new System.Windows.Forms.TextBox();
             this.buttonAddAnswer = new System.Windows.Forms.Button();
-            this.textBoxAnswer = new System.Windows.Forms.TextBox();
+            this.textBoxAnswerEditor = new System.Windows.Forms.TextBox();
             this.checkBoxRightAnswer = new System.Windows.Forms.CheckBox();
             this.buttonSaveQuestion = new System.Windows.Forms.Button();
-            this.listViewAnswers = new System.Windows.Forms.ListView();
+            this.listViewAnswersEditor = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,27 +52,28 @@
             this.tabPageAnswerEditor = new System.Windows.Forms.TabPage();
             this.adminStatusStrip = new System.Windows.Forms.StatusStrip();
             this.openXmlFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageDocumentEditor.SuspendLayout();
             this.tabPageAnswerEditor.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxQuestion
+            // textBoxQuestionEditor
             // 
-            this.textBoxQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxQuestionEditor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxQuestion.Location = new System.Drawing.Point(6, 6);
-            this.textBoxQuestion.MaxLength = 256;
-            this.textBoxQuestion.Multiline = true;
-            this.textBoxQuestion.Name = "textBoxQuestion";
-            this.textBoxQuestion.Size = new System.Drawing.Size(668, 63);
-            this.textBoxQuestion.TabIndex = 0;
+            this.textBoxQuestionEditor.Location = new System.Drawing.Point(6, 6);
+            this.textBoxQuestionEditor.MaxLength = 256;
+            this.textBoxQuestionEditor.Multiline = true;
+            this.textBoxQuestionEditor.Name = "textBoxQuestionEditor";
+            this.textBoxQuestionEditor.Size = new System.Drawing.Size(683, 63);
+            this.textBoxQuestionEditor.TabIndex = 0;
             // 
             // buttonAddAnswer
             // 
             this.buttonAddAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddAnswer.Location = new System.Drawing.Point(580, 75);
+            this.buttonAddAnswer.Location = new System.Drawing.Point(595, 75);
             this.buttonAddAnswer.Name = "buttonAddAnswer";
             this.buttonAddAnswer.Size = new System.Drawing.Size(94, 23);
             this.buttonAddAnswer.TabIndex = 3;
@@ -78,22 +81,22 @@
             this.buttonAddAnswer.UseVisualStyleBackColor = true;
             this.buttonAddAnswer.Click += new System.EventHandler(this.buttonAddAnswer_Click);
             // 
-            // textBoxAnswer
+            // textBoxAnswerEditor
             // 
-            this.textBoxAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxAnswerEditor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAnswer.Location = new System.Drawing.Point(6, 77);
-            this.textBoxAnswer.MaxLength = 128;
-            this.textBoxAnswer.Multiline = true;
-            this.textBoxAnswer.Name = "textBoxAnswer";
-            this.textBoxAnswer.Size = new System.Drawing.Size(468, 41);
-            this.textBoxAnswer.TabIndex = 1;
+            this.textBoxAnswerEditor.Location = new System.Drawing.Point(6, 77);
+            this.textBoxAnswerEditor.MaxLength = 128;
+            this.textBoxAnswerEditor.Multiline = true;
+            this.textBoxAnswerEditor.Name = "textBoxAnswerEditor";
+            this.textBoxAnswerEditor.Size = new System.Drawing.Size(483, 41);
+            this.textBoxAnswerEditor.TabIndex = 1;
             // 
             // checkBoxRightAnswer
             // 
             this.checkBoxRightAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxRightAnswer.AutoSize = true;
-            this.checkBoxRightAnswer.Location = new System.Drawing.Point(480, 79);
+            this.checkBoxRightAnswer.Location = new System.Drawing.Point(495, 79);
             this.checkBoxRightAnswer.Name = "checkBoxRightAnswer";
             this.checkBoxRightAnswer.Size = new System.Drawing.Size(94, 17);
             this.checkBoxRightAnswer.TabIndex = 2;
@@ -103,7 +106,7 @@
             // buttonSaveQuestion
             // 
             this.buttonSaveQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSaveQuestion.Location = new System.Drawing.Point(580, 427);
+            this.buttonSaveQuestion.Location = new System.Drawing.Point(595, 427);
             this.buttonSaveQuestion.Name = "buttonSaveQuestion";
             this.buttonSaveQuestion.Size = new System.Drawing.Size(94, 23);
             this.buttonSaveQuestion.TabIndex = 5;
@@ -111,17 +114,17 @@
             this.buttonSaveQuestion.UseVisualStyleBackColor = true;
             this.buttonSaveQuestion.Click += new System.EventHandler(this.buttonSaveQuestion_Click);
             // 
-            // listViewAnswers
+            // listViewAnswersEditor
             // 
-            this.listViewAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.listViewAnswersEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewAnswers.Location = new System.Drawing.Point(6, 124);
-            this.listViewAnswers.Name = "listViewAnswers";
-            this.listViewAnswers.Size = new System.Drawing.Size(468, 326);
-            this.listViewAnswers.TabIndex = 4;
-            this.listViewAnswers.UseCompatibleStateImageBehavior = false;
-            this.listViewAnswers.View = System.Windows.Forms.View.List;
+            this.listViewAnswersEditor.Location = new System.Drawing.Point(6, 124);
+            this.listViewAnswersEditor.Name = "listViewAnswersEditor";
+            this.listViewAnswersEditor.Size = new System.Drawing.Size(483, 326);
+            this.listViewAnswersEditor.TabIndex = 4;
+            this.listViewAnswersEditor.UseCompatibleStateImageBehavior = false;
+            this.listViewAnswersEditor.View = System.Windows.Forms.View.List;
             // 
             // menuStrip1
             // 
@@ -131,7 +134,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(712, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(727, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,6 +143,8 @@
             this.fIleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
+            this.toolStripMenuItemSaveAs,
+            this.toolStripSeparator1,
             this.addUserToolStripMenuItem,
             this.showLogsToolStripMenuItem});
             this.fIleToolStripMenuItem.Name = "fIleToolStripMenuItem";
@@ -158,6 +163,19 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItemSaveAs
+            // 
+            this.toolStripMenuItemSaveAs.Name = "toolStripMenuItemSaveAs";
+            this.toolStripMenuItemSaveAs.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemSaveAs.Text = "Save As";
+            this.toolStripMenuItemSaveAs.Click += new System.EventHandler(this.toolStripMenuItemSaveAs_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // addUserToolStripMenuItem
             // 
@@ -191,7 +209,7 @@
             this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(712, 464);
+            this.tabControl.Size = new System.Drawing.Size(727, 464);
             this.tabControl.TabIndex = 7;
             // 
             // tabPageDocumentEditor
@@ -203,7 +221,7 @@
             this.tabPageDocumentEditor.Location = new System.Drawing.Point(23, 4);
             this.tabPageDocumentEditor.Name = "tabPageDocumentEditor";
             this.tabPageDocumentEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDocumentEditor.Size = new System.Drawing.Size(685, 456);
+            this.tabPageDocumentEditor.Size = new System.Drawing.Size(700, 456);
             this.tabPageDocumentEditor.TabIndex = 1;
             this.tabPageDocumentEditor.Text = "Document editor";
             this.tabPageDocumentEditor.UseVisualStyleBackColor = true;
@@ -252,16 +270,16 @@
             // 
             // tabPageAnswerEditor
             // 
-            this.tabPageAnswerEditor.Controls.Add(this.textBoxQuestion);
-            this.tabPageAnswerEditor.Controls.Add(this.listViewAnswers);
+            this.tabPageAnswerEditor.Controls.Add(this.textBoxQuestionEditor);
+            this.tabPageAnswerEditor.Controls.Add(this.listViewAnswersEditor);
             this.tabPageAnswerEditor.Controls.Add(this.buttonAddAnswer);
             this.tabPageAnswerEditor.Controls.Add(this.buttonSaveQuestion);
-            this.tabPageAnswerEditor.Controls.Add(this.textBoxAnswer);
+            this.tabPageAnswerEditor.Controls.Add(this.textBoxAnswerEditor);
             this.tabPageAnswerEditor.Controls.Add(this.checkBoxRightAnswer);
             this.tabPageAnswerEditor.Location = new System.Drawing.Point(23, 4);
             this.tabPageAnswerEditor.Name = "tabPageAnswerEditor";
             this.tabPageAnswerEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAnswerEditor.Size = new System.Drawing.Size(685, 456);
+            this.tabPageAnswerEditor.Size = new System.Drawing.Size(700, 456);
             this.tabPageAnswerEditor.TabIndex = 0;
             this.tabPageAnswerEditor.Text = "Answers editor";
             this.tabPageAnswerEditor.UseVisualStyleBackColor = true;
@@ -270,7 +288,7 @@
             // 
             this.adminStatusStrip.Location = new System.Drawing.Point(0, 490);
             this.adminStatusStrip.Name = "adminStatusStrip";
-            this.adminStatusStrip.Size = new System.Drawing.Size(712, 22);
+            this.adminStatusStrip.Size = new System.Drawing.Size(727, 22);
             this.adminStatusStrip.TabIndex = 8;
             this.adminStatusStrip.Text = "AdminPaner: Here file";
             // 
@@ -278,13 +296,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 512);
+            this.ClientSize = new System.Drawing.Size(727, 512);
             this.Controls.Add(this.adminStatusStrip);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(318, 174);
             this.Name = "QuestionEditorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Question Editor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -300,12 +319,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxQuestion;
+        private System.Windows.Forms.TextBox textBoxQuestionEditor;
         private System.Windows.Forms.Button buttonAddAnswer;
-        private System.Windows.Forms.TextBox textBoxAnswer;
+        private System.Windows.Forms.TextBox textBoxAnswerEditor;
         private System.Windows.Forms.CheckBox checkBoxRightAnswer;
         private System.Windows.Forms.Button buttonSaveQuestion;
-        private System.Windows.Forms.ListView listViewAnswers;
+        private System.Windows.Forms.ListView listViewAnswersEditor;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fIleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -322,6 +341,9 @@
         private System.Windows.Forms.ToolStripMenuItem showLogsToolStripMenuItem;
         private System.Windows.Forms.StatusStrip adminStatusStrip;
         private System.Windows.Forms.OpenFileDialog openXmlFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSaveAs;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.SaveFileDialog saveXmlFileDialog;
     }
 }
 

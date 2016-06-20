@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,18 +11,13 @@ namespace TestBuilderAdmin
 {
     public partial class QuestionEditorForm : Form
     {
-        //list of questions, should be saved/loaded from a document
-        //List<Question> questions = new List<Question>();
-        //List<Answer> currentAnswers = new List<Answer>();
-
         QuestionsBank qBank;
-
 
         public QuestionEditorForm(bool userIsAdmin)
         {
             InitializeComponent();
 
-            if(!userIsAdmin)
+            if (!userIsAdmin)
             {
                 addUserToolStripMenuItem.Enabled = false;
                 showLogsToolStripMenuItem.Enabled = false;
@@ -33,31 +26,59 @@ namespace TestBuilderAdmin
 
         private void buttonAddAnswer_Click(object sender, EventArgs e)
         {
-            //var answer = new Answer(checkBoxRightAnswer.Checked, textBoxAnswer.Text);
-            //currentAnswers.Add(answer);
+            Answer answer = new Answer(textBoxAnswerEditor.Text, checkBoxRightAnswer.Checked);
+            ListViewItem li = new ListViewItem(answer.AnswerText);
+            li.Tag = answer; // save to Tag an instance of class
 
-            //listViewAnswers.Items.Add(answer.Text);
-            //if (checkBoxRightAnswer.Checked)
-            //    listViewAnswers.Items[listViewAnswers.Items.Count-1].ForeColor = Color.Green;
+            if (answer.isRight)
+                li.ForeColor = Color.Green;
 
-            //checkBoxRightAnswer.Checked = false;
-            //textBoxAnswer.Clear();
-            //textBoxAnswer.Focus();
+            listViewAnswersEditor.Items.Add(li);
+
+            checkBoxRightAnswer.Checked = false;
+            textBoxAnswerEditor.Clear();
+            textBoxAnswerEditor.Focus();
         }
 
         private void buttonSaveQuestion_Click(object sender, EventArgs e)
         {
-            //Question toSave = new Question(textBoxQuestion.Text, currentAnswers);
-            //questions.Add(toSave);
-            //listBoxQuestions.Items.Add(toSave);
+            Question toSave = new Question();
+
+            string questionText = textBoxQuestionEditor.Text;
+
+            if (String.IsNullOrEmpty(questionText) || String.IsNullOrWhiteSpace(questionText))
+            {
+                MessageBox.Show("Question cannot be empty!");
+                return;
+            }
+            else
+                toSave.QuestionText = questionText;
+
+            foreach (ListViewItem li in listViewAnswersEditor.Items)
+            {
+                // unbox answer from Tag (after adding to list)
+                toSave.Answers.Add(li.Tag as Answer); 
+            }
+
+            qBank.Questions.Add(toSave);
+
+            textBoxQuestionEditor.Clear();
+            textBoxAnswerEditor.Clear();
+            listViewAnswersEditor.Clear();
+
+            MessageBox.Show("Question saved successfully!");
+            //refresh questions list
+            listBoxQuestions.SelectedIndex = -1;
+            listBoxQuestions.DataSource = null;
+            listBoxQuestions.DataSource = qBank.Questions;
             
-            //currentAnswers.Clear();
-            //listViewAnswers.Clear();
-            //textBoxQuestion.Clear();
         }
 
         private void listBoxQuestions_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxQuestions.SelectedItem == null)
+                return;
+
             listViewAnswersCopy.Clear();
             var selectedQestion = listBoxQuestions.SelectedItem as Question;
 
@@ -83,11 +104,12 @@ namespace TestBuilderAdmin
         {
 
             string logs;
-                using (StreamReader reader = new StreamReader("logHistory.txt"))
-                {
-                    logs = reader.ReadToEnd();
-                }
-            MessageBox.Show(logs);  
+            using (StreamReader reader = new StreamReader("logHistory.txt"))
+            {
+                logs = reader.ReadToEnd();
+            }
+
+            MessageBox.Show(logs);
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,9 +119,44 @@ namespace TestBuilderAdmin
             if (DialogResult.OK == openXmlFileDialog.ShowDialog())
             {
                 qBank = QuestionsBank.LoadFromXml(openXmlFileDialog.FileName);
-                listBoxQuestions.DataSource = qBank.Questions;
-            }
 
+                qBank.xmlFileLocation = openXmlFileDialog.FileName;
+            }
+            listBoxQuestions.DataSource = qBank.Questions;
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                qBank.SaveToXml(qBank.xmlFileLocation);
+            }
+            catch
+            {
+                string fileName = Path.GetFileName(qBank.xmlFileLocation);
+                string eMessage = String.Format("Error: Cannot rewrite file: '{0}' \nPath: ", fileName, qBank.xmlFileLocation);
+                MessageBox.Show(eMessage);
+            }
+        }
+
+        private void toolStripMenuItemSaveAs_Click(object sender, EventArgs e)
+        {
+            saveXmlFileDialog.DefaultExt = "xml";
+            saveXmlFileDialog.AddExtension = true;
+            saveXmlFileDialog.Filter = "Xml Files (.xml)|*.xml";
+
+            if (DialogResult.OK == saveXmlFileDialog.ShowDialog())
+            {
+                try
+                {
+                    qBank.SaveToXml(saveXmlFileDialog.FileName);
+                }
+                catch
+                {
+                    MessageBox.Show("Some problems in saving your file on this location");
+                }
+            }
         }
     }
 }

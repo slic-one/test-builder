@@ -33,73 +33,78 @@
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonOkAdminLog = new System.Windows.Forms.Button();
-            this.buttonCancelAdminLog = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 62);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label1.Location = new System.Drawing.Point(16, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.Size = new System.Drawing.Size(42, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "login:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 133);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label2.Location = new System.Drawing.Point(16, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "password:";
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(124, 62);
+            this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.textBoxLogin.Location = new System.Drawing.Point(92, 23);
+            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(181, 26);
+            this.textBoxLogin.Size = new System.Drawing.Size(145, 23);
             this.textBoxLogin.TabIndex = 2;
+            this.textBoxLogin.Text = "admin";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(123, 130);
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.textBoxPassword.Location = new System.Drawing.Point(92, 66);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(181, 26);
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(145, 23);
             this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.Text = "111";
             // 
             // buttonOkAdminLog
             // 
-            this.buttonOkAdminLog.Location = new System.Drawing.Point(30, 215);
+            this.buttonOkAdminLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonOkAdminLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOkAdminLog.Location = new System.Drawing.Point(92, 104);
+            this.buttonOkAdminLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonOkAdminLog.Name = "buttonOkAdminLog";
-            this.buttonOkAdminLog.Size = new System.Drawing.Size(89, 31);
+            this.buttonOkAdminLog.Size = new System.Drawing.Size(101, 22);
             this.buttonOkAdminLog.TabIndex = 4;
-            this.buttonOkAdminLog.Text = "OK";
-            this.buttonOkAdminLog.UseVisualStyleBackColor = true;
+            this.buttonOkAdminLog.Text = "ENTER";
+            this.buttonOkAdminLog.UseVisualStyleBackColor = false;
             this.buttonOkAdminLog.Click += new System.EventHandler(this.buttonOkAdminLog_Click);
-            // 
-            // buttonCancelAdminLog
-            // 
-            this.buttonCancelAdminLog.Location = new System.Drawing.Point(215, 215);
-            this.buttonCancelAdminLog.Name = "buttonCancelAdminLog";
-            this.buttonCancelAdminLog.Size = new System.Drawing.Size(89, 31);
-            this.buttonCancelAdminLog.TabIndex = 5;
-            this.buttonCancelAdminLog.Text = "Cancel";
-            this.buttonCancelAdminLog.UseVisualStyleBackColor = true;
-            this.buttonCancelAdminLog.Click += new System.EventHandler(this.buttonCancelAdminLog_Click);
             // 
             // Autorization
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 278);
-            this.Controls.Add(this.buttonCancelAdminLog);
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(262, 136);
             this.Controls.Add(this.buttonOkAdminLog);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Autorization";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Autorization";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,6 +118,5 @@
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonOkAdminLog;
-        private System.Windows.Forms.Button buttonCancelAdminLog;
     }
 }
