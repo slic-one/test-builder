@@ -12,7 +12,12 @@ namespace TestBuilderAdmin
     /// </summary>
     class Question
     {
-        public string QestionText { get; set; }
+        public string QuestionText { get; set; }
         public List<Answer> Answers = new List<Answer>();
+
+        public override string ToString()
+        {
+            return QuestionText;
+        }
     }
 }

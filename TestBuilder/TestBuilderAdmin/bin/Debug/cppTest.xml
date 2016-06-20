@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--XML File with tests-->
+<Questions topic="c++">
+  <Question>
+    <QuestionText>Среди перечисленных конструкций C# укажите объявление метода</QuestionText>
+    <Answers>
+      <Answer right="false">string Name;</Answer>
+      <Answer right="false">string this [int i] {get {return “Name”;}}</Answer>
+      <Answer right="false">string Name {get{return “Name”;}} </Answer>
+      <Answer right="true">string GetName () { return “Name”;}</Answer>
+    </Answers>
+  </Question>
+  
+    <Question>
+    <QuestionText>Может ли этот тест пройти?
+var a = new A(); 
+ 
+a.GetType().GetField("B").SetValue(a, 83); 
+a.GetType().GetField("C").SetValue(a, 42); 
+ 
+Assert.Equal(a.b, a.c); 
+</QuestionText>
+    <Answers>
+      <Answer right="true">да</Answer>
+      <Answer right="false">нет</Answer>
+    </Answers>
+  </Question>
+  
+    <Question>
+    <QuestionText>Укажите все правильные способы объявления массива:</QuestionText>
+    <Answers>
+      <Answer right="false"> int k[]; </Answer>
+      <Answer right="false"> int k[3]; </Answer>
+      <Answer right="true"> +int[] k; </Answer>
+	   <Answer right="false">int[3] k;</Answer>
+      <Answer right="true">+int[] k = new int [3]; </Answer>
+    </Answers>
+  </Question>
+  
+  
+  
+</Questions>

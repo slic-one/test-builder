@@ -14,14 +14,16 @@ namespace TestBuilderAdmin
     public partial class QuestionEditorForm : Form
     {
         //list of questions, should be saved/loaded from a document
-        List<Question> questions = new List<Question>();
+        //List<Question> questions = new List<Question>();
+        //List<Answer> currentAnswers = new List<Answer>();
 
-        List<Answer> currentAnswers = new List<Answer>();
+        QuestionsBank qBank;
+
 
         public QuestionEditorForm(bool userIsAdmin)
         {
             InitializeComponent();
-            listViewAnswersCopy = listViewAnswers;
+
             if(!userIsAdmin)
             {
                 addUserToolStripMenuItem.Enabled = false;
@@ -31,38 +33,44 @@ namespace TestBuilderAdmin
 
         private void buttonAddAnswer_Click(object sender, EventArgs e)
         {
-            var answer = new Answer(checkBoxRightAnswer.Checked, textBoxAnswer.Text);
-            currentAnswers.Add(answer);
+            //var answer = new Answer(checkBoxRightAnswer.Checked, textBoxAnswer.Text);
+            //currentAnswers.Add(answer);
 
-            listViewAnswers.Items.Add(answer.Text);
-            if (checkBoxRightAnswer.Checked)
-                listViewAnswers.Items[listViewAnswers.Items.Count-1].ForeColor = Color.Green;
+            //listViewAnswers.Items.Add(answer.Text);
+            //if (checkBoxRightAnswer.Checked)
+            //    listViewAnswers.Items[listViewAnswers.Items.Count-1].ForeColor = Color.Green;
 
-            checkBoxRightAnswer.Checked = false;
-            textBoxAnswer.Clear();
-            textBoxAnswer.Focus();
+            //checkBoxRightAnswer.Checked = false;
+            //textBoxAnswer.Clear();
+            //textBoxAnswer.Focus();
         }
 
         private void buttonSaveQuestion_Click(object sender, EventArgs e)
         {
-            Question toSave = new Question(textBoxQuestion.Text, currentAnswers);
-            questions.Add(toSave);
-            listBoxQuestions.Items.Add(toSave);
+            //Question toSave = new Question(textBoxQuestion.Text, currentAnswers);
+            //questions.Add(toSave);
+            //listBoxQuestions.Items.Add(toSave);
             
-            currentAnswers.Clear();
-            listViewAnswers.Clear();
-            textBoxQuestion.Clear();
+            //currentAnswers.Clear();
+            //listViewAnswers.Clear();
+            //textBoxQuestion.Clear();
         }
 
         private void listBoxQuestions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Question selectedQuestion = questions[listBoxQuestions.SelectedIndex];
-            foreach (var el in selectedQuestion.Answers)
+            listViewAnswersCopy.Clear();
+            var selectedQestion = listBoxQuestions.SelectedItem as Question;
+
+            int counter = 0;
+            foreach (var a in selectedQestion.Answers)
             {
-                listViewAnswersCopy.Items.Add(el.Text);
-                if (el.IsRightAnswer)
-                    listViewAnswersCopy.Items[listViewAnswersCopy.Items.Count - 1].ForeColor = Color.Green;
+                listViewAnswersCopy.Items.Add(a.ToString());
+
+                if (a.isRight) // highlight right answers with green color
+                    listViewAnswersCopy.Items[counter].ForeColor = Color.Green;
+                counter++;
             }
+
         }
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,6 +88,18 @@ namespace TestBuilderAdmin
                     logs = reader.ReadToEnd();
                 }
             MessageBox.Show(logs);  
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openXmlFileDialog.Filter = "Xml Files (.xml)|*.xml";
+
+            if (DialogResult.OK == openXmlFileDialog.ShowDialog())
+            {
+                qBank = QuestionsBank.LoadFromXml(openXmlFileDialog.FileName);
+                listBoxQuestions.DataSource = qBank.Questions;
+            }
+
         }
     }
 }

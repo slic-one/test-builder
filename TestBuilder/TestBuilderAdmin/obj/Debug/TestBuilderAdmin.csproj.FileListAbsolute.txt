@@ -29,3 +29,11 @@ H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestB
 C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe.config
 C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.exe
 C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.pdb
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.AddNewUserForm.resources
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Autorization.resources
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionEditorForm.resources
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Properties.Resources.resources
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.pdb

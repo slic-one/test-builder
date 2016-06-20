@@ -45,6 +45,7 @@ namespace TestBuilderAdmin
                         { isAdmin = true; }
                         autorizationComplete = true;
                         addLog(temp);
+                        this.Hide();
                         QuestionEditorForm q = new QuestionEditorForm(isAdmin);
                         reader.Close();
                         q.ShowDialog();

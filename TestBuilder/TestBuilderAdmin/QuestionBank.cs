@@ -37,7 +37,7 @@ namespace TestBuilderAdmin
                 var q = new Question();
                 // question have only one text qestion, so take the first
                 var t = e.Descendants("QuestionText").First();
-                q.QestionText = t.Value;
+                q.QuestionText = t.Value;
 
                 // get parent of <Answer> nodes (p.s <Answers> is a container)
                 var a = e.Descendants("Answers").First();
@@ -67,7 +67,7 @@ namespace TestBuilderAdmin
             foreach (var q in Questions)
             {
                 var xQuestion = new XElement("Question");
-                xQuestion.Add(new XElement("QuestionText"), q.QestionText); // root <Questions>
+                xQuestion.Add(new XElement("QuestionText"), q.QuestionText); // root <Questions>
 
                 var xAnswers = new XElement("Answers"); // container <Answers> for <Answer> 
 
