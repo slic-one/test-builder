@@ -58,6 +58,7 @@
       <DependentUpon>Autorization.cs</DependentUpon>
     </Compile>
     <Compile Include="Question.cs" />
+    <Compile Include="QuestionBank.cs" />
     <Compile Include="QuestionEditor.cs">
       <SubType>Form</SubType>
     </Compile>

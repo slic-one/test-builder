@@ -26,3 +26,6 @@ H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestB
 H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Properties.Resources.resources
 H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache
 H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.AddNewUserForm.resources
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe.config
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.exe
+C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.pdb

@@ -6,20 +6,13 @@ using System.Threading.Tasks;
 
 namespace TestBuilderAdmin
 {
+    /// <summary>
+    /// Qestion class is a container
+    /// with 2 public fields: QuestionText and answers(List)
+    /// </summary>
     class Question
     {
-        public Question(string text, List<Answer> answer)
-        {
-            Text = text;
-            Answers = answer;
-        }
-
-        public override string ToString()
-        {
-            return Text;
-        }
-
-        public List<Answer> Answers { get; private set; }
-        public string Text { get; private set; }
+        public string QestionText { get; set; }
+        public List<Answer> Answers = new List<Answer>();
     }
 }
