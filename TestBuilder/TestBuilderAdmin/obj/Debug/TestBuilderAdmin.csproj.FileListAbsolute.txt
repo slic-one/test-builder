@@ -48,3 +48,4 @@ C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\De
 C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionEditorForm.resources
 C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Properties.Resources.resources
 C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache
+H:\Study\SvnGid\NazLog\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csprojResolveAssemblyReference.cache
