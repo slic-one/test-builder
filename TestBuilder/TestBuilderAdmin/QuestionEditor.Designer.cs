@@ -53,6 +53,9 @@
             this.adminStatusStrip = new System.Windows.Forms.StatusStrip();
             this.openXmlFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSelectedQestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageDocumentEditor.SuspendLayout();
@@ -73,12 +76,14 @@
             // buttonAddAnswer
             // 
             this.buttonAddAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddAnswer.Location = new System.Drawing.Point(595, 75);
+            this.buttonAddAnswer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonAddAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddAnswer.Location = new System.Drawing.Point(595, 77);
             this.buttonAddAnswer.Name = "buttonAddAnswer";
             this.buttonAddAnswer.Size = new System.Drawing.Size(94, 23);
             this.buttonAddAnswer.TabIndex = 3;
             this.buttonAddAnswer.Text = "Add answer";
-            this.buttonAddAnswer.UseVisualStyleBackColor = true;
+            this.buttonAddAnswer.UseVisualStyleBackColor = false;
             this.buttonAddAnswer.Click += new System.EventHandler(this.buttonAddAnswer_Click);
             // 
             // textBoxAnswerEditor
@@ -120,6 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewAnswersEditor.Location = new System.Drawing.Point(6, 124);
+            this.listViewAnswersEditor.MultiSelect = false;
             this.listViewAnswersEditor.Name = "listViewAnswersEditor";
             this.listViewAnswersEditor.Size = new System.Drawing.Size(483, 326);
             this.listViewAnswersEditor.TabIndex = 4;
@@ -131,6 +137,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fIleToolStripMenuItem,
+            this.editToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -154,40 +161,40 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripMenuItemSaveAs
             // 
             this.toolStripMenuItemSaveAs.Name = "toolStripMenuItemSaveAs";
-            this.toolStripMenuItemSaveAs.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemSaveAs.Size = new System.Drawing.Size(128, 22);
             this.toolStripMenuItemSaveAs.Text = "Save As";
             this.toolStripMenuItemSaveAs.Click += new System.EventHandler(this.toolStripMenuItemSaveAs_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(125, 6);
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.addUserToolStripMenuItem.Text = "Add user";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // showLogsToolStripMenuItem
             // 
             this.showLogsToolStripMenuItem.Name = "showLogsToolStripMenuItem";
-            this.showLogsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showLogsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.showLogsToolStripMenuItem.Text = "Show logs";
             this.showLogsToolStripMenuItem.Click += new System.EventHandler(this.showLogsToolStripMenuItem_Click);
             // 
@@ -270,6 +277,7 @@
             // 
             // tabPageAnswerEditor
             // 
+            this.tabPageAnswerEditor.Controls.Add(this.button1);
             this.tabPageAnswerEditor.Controls.Add(this.textBoxQuestionEditor);
             this.tabPageAnswerEditor.Controls.Add(this.listViewAnswersEditor);
             this.tabPageAnswerEditor.Controls.Add(this.buttonAddAnswer);
@@ -291,6 +299,34 @@
             this.adminStatusStrip.Size = new System.Drawing.Size(727, 22);
             this.adminStatusStrip.TabIndex = 8;
             this.adminStatusStrip.Text = "AdminPaner: Here file";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editSelectedQestionToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.DropDownOpening += new System.EventHandler(this.editToolStripMenuItem_DropDownOpening);
+            // 
+            // editSelectedQestionToolStripMenuItem
+            // 
+            this.editSelectedQestionToolStripMenuItem.Name = "editSelectedQestionToolStripMenuItem";
+            this.editSelectedQestionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.editSelectedQestionToolStripMenuItem.Text = "Edit Selected Qestion";
+            this.editSelectedQestionToolStripMenuItem.Click += new System.EventHandler(this.editSelectedQestionToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(595, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Remove";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // QuestionEditorForm
             // 
@@ -344,6 +380,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSaveAs;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.SaveFileDialog saveXmlFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editSelectedQestionToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

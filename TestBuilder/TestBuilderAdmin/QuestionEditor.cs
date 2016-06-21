@@ -62,9 +62,7 @@ namespace TestBuilderAdmin
 
             qBank.Questions.Add(toSave);
 
-            textBoxQuestionEditor.Clear();
-            textBoxAnswerEditor.Clear();
-            listViewAnswersEditor.Clear();
+            clearQuestionEditor();
 
             MessageBox.Show("Question saved successfully!");
             //refresh questions list
@@ -72,6 +70,13 @@ namespace TestBuilderAdmin
             listBoxQuestions.DataSource = null;
             listBoxQuestions.DataSource = qBank.Questions;
             
+        }
+
+        private void clearQuestionEditor()
+        {
+            textBoxQuestionEditor.Clear();
+            textBoxAnswerEditor.Clear();
+            listViewAnswersEditor.Clear();
         }
 
         private void listBoxQuestions_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,24 +99,9 @@ namespace TestBuilderAdmin
 
         }
 
-        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddNewUserForm addUser = new AddNewUserForm();
-            addUser.ShowDialog();
-        }
 
-        private void showLogsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-            string logs;
-            using (StreamReader reader = new StreamReader("logHistory.txt"))
-            {
-                logs = reader.ReadToEnd();
-            }
-
-            MessageBox.Show(logs);
-        }
-
+        #region work_With_Xml_Files
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openXmlFileDialog.Filter = "Xml Files (.xml)|*.xml";
@@ -122,6 +112,7 @@ namespace TestBuilderAdmin
 
                 qBank.xmlFileLocation = openXmlFileDialog.FileName;
             }
+
             listBoxQuestions.DataSource = qBank.Questions;
 
         }
@@ -157,6 +148,63 @@ namespace TestBuilderAdmin
                     MessageBox.Show("Some problems in saving your file on this location");
                 }
             }
+        }
+
+        #endregion
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewUserForm addUser = new AddNewUserForm();
+            addUser.ShowDialog();
+        }
+
+        private void showLogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string logs;
+            using (StreamReader reader = new StreamReader("logHistory.txt"))
+            {
+                logs = reader.ReadToEnd();
+            }
+
+            MessageBox.Show(logs);
+        }
+
+        //before press "edit question" check if selected one
+        private void editToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            if (listBoxQuestions.SelectedItem == null)
+                editSelectedQestionToolStripMenuItem.Enabled = false;
+            else
+                editSelectedQestionToolStripMenuItem.Enabled = true;
+        }
+
+        //put selected question into question editor
+        private void editSelectedQestionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var selectedQestion = listBoxQuestions.SelectedItem as Question;
+            textBoxQuestionEditor.Text = selectedQestion.QuestionText;
+
+            //fill list with answers
+            int counter = 0;
+            foreach (var answer in selectedQestion.Answers)
+            {
+                listViewAnswersEditor.Items.Add(answer.ToString());
+
+                if (answer.isRight) // highlight right answers with green color
+                    listViewAnswersEditor.Items[counter].ForeColor = Color.Green;
+                counter++;
+            }
+
+            tabControl.SelectedIndex = 1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listViewAnswersEditor.SelectedIndices.Count > 0)
+                listViewAnswersEditor.Items.RemoveAt(listViewAnswersEditor.SelectedIndices[0]);
+            else
+                MessageBox.Show("To remove first select answer...");
         }
     }
 }
