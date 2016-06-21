@@ -105,18 +105,20 @@
             // 
             this.checkBoxRightAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxRightAnswer.AutoSize = true;
+            this.checkBoxRightAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxRightAnswer.ForeColor = System.Drawing.Color.DarkGreen;
             this.checkBoxRightAnswer.Location = new System.Drawing.Point(495, 79);
             this.checkBoxRightAnswer.Name = "checkBoxRightAnswer";
-            this.checkBoxRightAnswer.Size = new System.Drawing.Size(94, 17);
+            this.checkBoxRightAnswer.Size = new System.Drawing.Size(69, 21);
             this.checkBoxRightAnswer.TabIndex = 2;
-            this.checkBoxRightAnswer.Text = "Is right answer";
+            this.checkBoxRightAnswer.Text = "Is right";
             this.checkBoxRightAnswer.UseVisualStyleBackColor = true;
             // 
             // buttonSaveQuestion
             // 
             this.buttonSaveQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSaveQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSaveQuestion.Location = new System.Drawing.Point(595, 427);
+            this.buttonSaveQuestion.Location = new System.Drawing.Point(600, 427);
             this.buttonSaveQuestion.Name = "buttonSaveQuestion";
             this.buttonSaveQuestion.Size = new System.Drawing.Size(94, 23);
             this.buttonSaveQuestion.TabIndex = 5;
@@ -342,17 +344,17 @@
             // 
             this.textBoxTopic.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxTopic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTopic.Location = new System.Drawing.Point(72, 4);
+            this.textBoxTopic.Location = new System.Drawing.Point(94, 4);
             this.textBoxTopic.Name = "textBoxTopic";
-            this.textBoxTopic.Size = new System.Drawing.Size(291, 20);
+            this.textBoxTopic.Size = new System.Drawing.Size(232, 20);
             this.textBoxTopic.TabIndex = 8;
-            this.textBoxTopic.Text = "Enter name";
+            this.textBoxTopic.Text = "Enter topic name";
             this.textBoxTopic.Leave += new System.EventHandler(this.textBoxTopic_Leave);
             // 
             // labelTopic
             // 
             this.labelTopic.AutoSize = true;
-            this.labelTopic.Location = new System.Drawing.Point(9, 6);
+            this.labelTopic.Location = new System.Drawing.Point(31, 6);
             this.labelTopic.Name = "labelTopic";
             this.labelTopic.Size = new System.Drawing.Size(57, 13);
             this.labelTopic.TabIndex = 9;
