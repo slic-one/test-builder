@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Questions topic="Моя тема">
+  <Question>
+    <QuestionText>Запитання</QuestionText>
+    <Answers>
+      <Answer right="true">відповідь1</Answer>
+      <Answer right="false">відповідь2</Answer>
+    </Answers>
+  </Question>
+</Questions>

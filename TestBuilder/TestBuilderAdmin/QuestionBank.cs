@@ -62,12 +62,15 @@ namespace TestBuilderAdmin
         public void SaveToXml(string fileLocation)
         {
             XDocument xmlDocument = new XDocument(new XDeclaration("1.1", "utf-8", "yes"));
+            
             XElement xQuestions = new XElement("Questions", new XAttribute("topic", Topic));
 
             foreach (var q in Questions)
             {
                 var xQuestion = new XElement("Question");
-                xQuestion.Add(new XElement("QuestionText"), q.QuestionText); // root <Questions>
+                var xqText = new XElement("QuestionText");
+                xqText.Add(q.QuestionText);
+                xQuestion.Add(xqText); // root <Questions>
 
                 var xAnswers = new XElement("Answers"); // container <Answers> for <Answer> 
 

@@ -42,6 +42,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSelectedQestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDocumentEditor = new System.Windows.Forms.TabPage();
@@ -50,16 +52,18 @@
             this.listViewAnswersCopy = new System.Windows.Forms.ListView();
             this.listBoxQuestions = new System.Windows.Forms.ListBox();
             this.tabPageAnswerEditor = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.adminStatusStrip = new System.Windows.Forms.StatusStrip();
             this.openXmlFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSelectedQestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxTopic = new System.Windows.Forms.TextBox();
+            this.labelTopic = new System.Windows.Forms.Label();
+            this.toolStripStatusFileName = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageDocumentEditor.SuspendLayout();
             this.tabPageAnswerEditor.SuspendLayout();
+            this.adminStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxQuestionEditor
@@ -111,6 +115,7 @@
             // buttonSaveQuestion
             // 
             this.buttonSaveQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSaveQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveQuestion.Location = new System.Drawing.Point(595, 427);
             this.buttonSaveQuestion.Name = "buttonSaveQuestion";
             this.buttonSaveQuestion.Size = new System.Drawing.Size(94, 23);
@@ -161,42 +166,58 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripMenuItemSaveAs
             // 
             this.toolStripMenuItemSaveAs.Name = "toolStripMenuItemSaveAs";
-            this.toolStripMenuItemSaveAs.Size = new System.Drawing.Size(128, 22);
+            this.toolStripMenuItemSaveAs.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItemSaveAs.Text = "Save As";
             this.toolStripMenuItemSaveAs.Click += new System.EventHandler(this.toolStripMenuItemSaveAs_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(125, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addUserToolStripMenuItem.Text = "Add user";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // showLogsToolStripMenuItem
             // 
             this.showLogsToolStripMenuItem.Name = "showLogsToolStripMenuItem";
-            this.showLogsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.showLogsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.showLogsToolStripMenuItem.Text = "Show logs";
             this.showLogsToolStripMenuItem.Click += new System.EventHandler(this.showLogsToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editSelectedQestionToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.DropDownOpening += new System.EventHandler(this.editToolStripMenuItem_DropDownOpening);
+            // 
+            // editSelectedQestionToolStripMenuItem
+            // 
+            this.editSelectedQestionToolStripMenuItem.Name = "editSelectedQestionToolStripMenuItem";
+            this.editSelectedQestionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.editSelectedQestionToolStripMenuItem.Text = "Edit Selected Qestion";
+            this.editSelectedQestionToolStripMenuItem.Click += new System.EventHandler(this.editSelectedQestionToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -221,6 +242,8 @@
             // 
             // tabPageDocumentEditor
             // 
+            this.tabPageDocumentEditor.Controls.Add(this.labelTopic);
+            this.tabPageDocumentEditor.Controls.Add(this.textBoxTopic);
             this.tabPageDocumentEditor.Controls.Add(this.label2);
             this.tabPageDocumentEditor.Controls.Add(this.label1);
             this.tabPageDocumentEditor.Controls.Add(this.listViewAnswersCopy);
@@ -246,7 +269,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 4);
+            this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 13);
             this.label1.TabIndex = 6;
@@ -258,7 +281,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewAnswersCopy.Location = new System.Drawing.Point(369, 19);
             this.listViewAnswersCopy.Name = "listViewAnswersCopy";
-            this.listViewAnswersCopy.Size = new System.Drawing.Size(310, 430);
+            this.listViewAnswersCopy.Size = new System.Drawing.Size(328, 430);
             this.listViewAnswersCopy.TabIndex = 5;
             this.listViewAnswersCopy.UseCompatibleStateImageBehavior = false;
             this.listViewAnswersCopy.View = System.Windows.Forms.View.List;
@@ -269,9 +292,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxQuestions.FormattingEnabled = true;
-            this.listBoxQuestions.Location = new System.Drawing.Point(6, 19);
+            this.listBoxQuestions.Location = new System.Drawing.Point(6, 45);
+            this.listBoxQuestions.MinimumSize = new System.Drawing.Size(357, 407);
             this.listBoxQuestions.Name = "listBoxQuestions";
-            this.listBoxQuestions.Size = new System.Drawing.Size(357, 420);
+            this.listBoxQuestions.Size = new System.Drawing.Size(357, 407);
             this.listBoxQuestions.TabIndex = 0;
             this.listBoxQuestions.SelectedIndexChanged += new System.EventHandler(this.listBoxQuestions_SelectedIndexChanged);
             // 
@@ -292,30 +316,6 @@
             this.tabPageAnswerEditor.Text = "Answers editor";
             this.tabPageAnswerEditor.UseVisualStyleBackColor = true;
             // 
-            // adminStatusStrip
-            // 
-            this.adminStatusStrip.Location = new System.Drawing.Point(0, 490);
-            this.adminStatusStrip.Name = "adminStatusStrip";
-            this.adminStatusStrip.Size = new System.Drawing.Size(727, 22);
-            this.adminStatusStrip.TabIndex = 8;
-            this.adminStatusStrip.Text = "AdminPaner: Here file";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editSelectedQestionToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.DropDownOpening += new System.EventHandler(this.editToolStripMenuItem_DropDownOpening);
-            // 
-            // editSelectedQestionToolStripMenuItem
-            // 
-            this.editSelectedQestionToolStripMenuItem.Name = "editSelectedQestionToolStripMenuItem";
-            this.editSelectedQestionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.editSelectedQestionToolStripMenuItem.Text = "Edit Selected Qestion";
-            this.editSelectedQestionToolStripMenuItem.Click += new System.EventHandler(this.editSelectedQestionToolStripMenuItem_Click);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -327,6 +327,41 @@
             this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // adminStatusStrip
+            // 
+            this.adminStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusFileName});
+            this.adminStatusStrip.Location = new System.Drawing.Point(0, 490);
+            this.adminStatusStrip.Name = "adminStatusStrip";
+            this.adminStatusStrip.Size = new System.Drawing.Size(727, 22);
+            this.adminStatusStrip.TabIndex = 8;
+            this.adminStatusStrip.Text = "AdminPaner: Here file";
+            // 
+            // textBoxTopic
+            // 
+            this.textBoxTopic.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxTopic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxTopic.Location = new System.Drawing.Point(72, 4);
+            this.textBoxTopic.Name = "textBoxTopic";
+            this.textBoxTopic.Size = new System.Drawing.Size(291, 20);
+            this.textBoxTopic.TabIndex = 8;
+            this.textBoxTopic.Text = "Enter name";
+            this.textBoxTopic.Leave += new System.EventHandler(this.textBoxTopic_Leave);
+            // 
+            // labelTopic
+            // 
+            this.labelTopic.AutoSize = true;
+            this.labelTopic.Location = new System.Drawing.Point(9, 6);
+            this.labelTopic.Name = "labelTopic";
+            this.labelTopic.Size = new System.Drawing.Size(57, 13);
+            this.labelTopic.TabIndex = 9;
+            this.labelTopic.Text = "Test topic:";
+            // 
+            // toolStripStatusFileName
+            // 
+            this.toolStripStatusFileName.Name = "toolStripStatusFileName";
+            this.toolStripStatusFileName.Size = new System.Drawing.Size(0, 17);
             // 
             // QuestionEditorForm
             // 
@@ -348,6 +383,8 @@
             this.tabPageDocumentEditor.PerformLayout();
             this.tabPageAnswerEditor.ResumeLayout(false);
             this.tabPageAnswerEditor.PerformLayout();
+            this.adminStatusStrip.ResumeLayout(false);
+            this.adminStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,6 +420,9 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editSelectedQestionToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelTopic;
+        private System.Windows.Forms.TextBox textBoxTopic;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusFileName;
     }
 }
 

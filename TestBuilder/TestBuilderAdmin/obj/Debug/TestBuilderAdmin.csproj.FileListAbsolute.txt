@@ -37,3 +37,14 @@ C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Deb
 C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache
 C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe
 C:\Users\Great\Desktop\TeamGit\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.pdb
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe.config
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.exe
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.pdb
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.exe
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\bin\Debug\TestBuilderAdmin.pdb
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csprojResolveAssemblyReference.cache
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.AddNewUserForm.resources
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Autorization.resources
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.QuestionEditorForm.resources
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.Properties.Resources.resources
+C:\Users\s23-rp\Desktop\GitTeam\test-builder\TestBuilder\TestBuilderAdmin\obj\Debug\TestBuilderAdmin.csproj.GenerateResource.Cache

@@ -22,6 +22,13 @@ namespace TestBuilderAdmin
                 addUserToolStripMenuItem.Enabled = false;
                 showLogsToolStripMenuItem.Enabled = false;
             }
+
+            qBank = new QuestionsBank();
+
+            //settings
+            saveXmlFileDialog.DefaultExt = "xml";
+            saveXmlFileDialog.AddExtension = true;
+            saveXmlFileDialog.Filter = "Xml Files (.xml)|*.xml";
         }
 
         private void buttonAddAnswer_Click(object sender, EventArgs e)
@@ -57,7 +64,7 @@ namespace TestBuilderAdmin
             foreach (ListViewItem li in listViewAnswersEditor.Items)
             {
                 // unbox answer from Tag (after adding to list)
-                toSave.Answers.Add(li.Tag as Answer); 
+                toSave.Answers.Add(li.Tag as Answer);
             }
 
             qBank.Questions.Add(toSave);
@@ -69,7 +76,7 @@ namespace TestBuilderAdmin
             listBoxQuestions.SelectedIndex = -1;
             listBoxQuestions.DataSource = null;
             listBoxQuestions.DataSource = qBank.Questions;
-            
+
         }
 
         private void clearQuestionEditor()
@@ -109,19 +116,30 @@ namespace TestBuilderAdmin
             if (DialogResult.OK == openXmlFileDialog.ShowDialog())
             {
                 qBank = QuestionsBank.LoadFromXml(openXmlFileDialog.FileName);
-
                 qBank.xmlFileLocation = openXmlFileDialog.FileName;
             }
 
             listBoxQuestions.DataSource = qBank.Questions;
-
+            textBoxTopic.Text = qBank.Topic;
+            toolStripStatusFileName.Text = Path.GetFileName(qBank.xmlFileLocation);
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                qBank.SaveToXml(qBank.xmlFileLocation);
+                if (!String.IsNullOrEmpty(qBank.xmlFileLocation))
+                    qBank.SaveToXml(qBank.xmlFileLocation);
+                else
+                {
+                    if (DialogResult.OK == saveXmlFileDialog.ShowDialog())
+                    {
+                        qBank.xmlFileLocation = saveXmlFileDialog.FileName;
+                        qBank.SaveToXml(qBank.xmlFileLocation);
+                    }
+                }
+
+                MessageBox.Show("File '{0}' save successfully!", Path.GetFileName(qBank.xmlFileLocation));
             }
             catch
             {
@@ -205,6 +223,11 @@ namespace TestBuilderAdmin
                 listViewAnswersEditor.Items.RemoveAt(listViewAnswersEditor.SelectedIndices[0]);
             else
                 MessageBox.Show("To remove first select answer...");
+        }
+
+        private void textBoxTopic_Leave(object sender, EventArgs e)
+        {
+            qBank.Topic = textBoxTopic.Text;
         }
     }
 }
