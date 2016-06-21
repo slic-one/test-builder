@@ -33,6 +33,12 @@ namespace TestBuilderAdmin
 
         private void buttonAddAnswer_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBoxAnswerEditor.Text))
+            {
+                MessageBox.Show("Cannot add empty answer..");
+                return;
+            }
+
             Answer answer = new Answer(textBoxAnswerEditor.Text, checkBoxRightAnswer.Checked);
             ListViewItem li = new ListViewItem(answer.AnswerText);
             li.Tag = answer; // save to Tag an instance of class
@@ -67,7 +73,22 @@ namespace TestBuilderAdmin
                 toSave.Answers.Add(li.Tag as Answer);
             }
 
-            qBank.Questions.Add(toSave);
+
+            //if this question existed before updated only answers
+            bool questionAlreadyExists = false;
+            string currentQestionText = toSave.QuestionText.Trim(); //remove all white spaces before/after
+            foreach (var q in qBank.Questions)
+            {
+                if (currentQestionText == q.QuestionText.Trim())
+                {
+                    q.Answers = toSave.Answers;
+                    questionAlreadyExists = true;
+                    break;
+                }
+            }
+
+            if(!questionAlreadyExists)
+                qBank.Questions.Add(toSave);
 
             clearQuestionEditor();
 
@@ -207,7 +228,9 @@ namespace TestBuilderAdmin
             int counter = 0;
             foreach (var answer in selectedQestion.Answers)
             {
-                listViewAnswersEditor.Items.Add(answer.ToString());
+                ListViewItem li = new ListViewItem(answer.ToString());
+                li.Tag = answer;
+                listViewAnswersEditor.Items.Add(li);
 
                 if (answer.isRight) // highlight right answers with green color
                     listViewAnswersEditor.Items[counter].ForeColor = Color.Green;

@@ -14,9 +14,11 @@ namespace TestBuilderAdmin
     {
         bool isAdmin;
         bool autorizationComplete;
+
         public Autorization()
         {
             InitializeComponent();
+
             autorizationComplete = false;
             isAdmin = false;
         }
@@ -46,6 +48,7 @@ namespace TestBuilderAdmin
                         autorizationComplete = true;
                         addLog(temp);
                         this.Hide();
+
                         QuestionEditorForm q = new QuestionEditorForm(isAdmin);
                         reader.Close();
                         q.ShowDialog();
