@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TestClient
 {
@@ -16,10 +17,24 @@ namespace TestClient
 		DateTime dt = new DateTime();
         QuestionsBank qBank;
 
-		public TestClient()
+        string studentName;
+        string studentSurname;
+        string studentGroup;
+
+        int counterRightAnswers;
+
+        public TestClient(string name,string surname,string group)
 		{
 			InitializeComponent();
-			timer1.Interval = 1000;
+
+            buttonEndTest.Visible = false;
+            buttonBeginTest.Visible = true;
+
+            this.studentName = name;
+            this.studentSurname = surname;
+            this.studentGroup = group;
+
+            timer1.Interval = 1000;
             qBank = QuestionsBank.LoadFromXml(@"cppTest.xml");
 		}
 		
@@ -32,7 +47,7 @@ namespace TestClient
 			}
 			labelSubjectError.Visible = false;
 
-			//buttonEndTest.Visible = true;
+			buttonEndTest.Visible = true;
 			buttonBeginTest.Visible = false;
 
 			comboBoxSubjects.Enabled = false;
@@ -43,12 +58,12 @@ namespace TestClient
             listBoxQuestion.DataSource = qBank.Questions;
 		}
 
-		private void buttonEndTest_Click(object sender, EventArgs e)
+		/*private void buttonEndTest_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("Are you sure you want to end the test?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-			//buttonEndTest.Visible = false;
+			buttonEndTest.Visible = false;
 			buttonBeginTest.Visible = true;
-		}
+		}*/
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
@@ -68,6 +83,45 @@ namespace TestClient
                 li.Tag = a;
                 listViewAnswers.Items.Add(li);
            }
+        }
+
+        private void buttonEndTest_Click_1(object sender, EventArgs e)
+        {
+            buttonEndTest.Visible = false;
+            buttonBeginTest.Visible = true;
+
+            DialogResult result= MessageBox.Show("Завершити тест?", "Увага!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result==DialogResult.Yes)
+            {
+                timer1.Stop();
+
+                counterRightAnswers =0;
+                foreach(var question in qBank.Questions)
+                {
+                    foreach(var answer in question.Answers)
+                    {
+                        //here must be checking is selected answer right or not but it don't work
+                        if (answer.isSelected == answer.isRight)
+                        {
+                            counterRightAnswers++;
+                        }
+                    }
+                }
+
+                double min = Int32.Parse(labelTimer.Text.Substring(0, labelTimer.Text.IndexOf(":")));
+                double sec= (Double)Int32.Parse(labelTimer.Text.Substring(labelTimer.Text.IndexOf(":")+1, 2))/100;
+                double spentTime = 40.00 - (min + sec);
+
+
+                MessageBox.Show(String.Format("Ваш результат {0} правильних відповідей з {1} за {2:0.0} хвилин", counterRightAnswers, qBank.Questions.Count,  spentTime));
+
+                using (StreamWriter writer = new StreamWriter(studentGroup+"Rezults.txt", true))
+                {
+                    writer.WriteLine(String.Format("{0}  {1}  {2} -результат {3} з {4} час {5:0.0} хвилин", DateTime.Now, studentName, studentSurname, counterRightAnswers, qBank.Questions.Count, spentTime));
+                   
+                }
+            }
         }
     }
 }

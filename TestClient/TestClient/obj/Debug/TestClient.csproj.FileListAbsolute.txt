@@ -8,3 +8,12 @@ C:\Users\Great\Desktop\TeamGit\test-builder\test-builder\TestClient\TestClient\o
 C:\Users\Great\Desktop\TeamGit\test-builder\test-builder\TestClient\TestClient\obj\Debug\TestClient.csproj.GenerateResource.Cache
 C:\Users\Great\Desktop\TeamGit\test-builder\test-builder\TestClient\TestClient\obj\Debug\TestClient.exe
 C:\Users\Great\Desktop\TeamGit\test-builder\test-builder\TestClient\TestClient\obj\Debug\TestClient.pdb
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\bin\Debug\TestClient.exe.config
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.exe
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.pdb
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\bin\Debug\TestClient.exe
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\bin\Debug\TestClient.pdb
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.TestClient.resources
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.Properties.Resources.resources
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.csproj.GenerateResource.Cache
+H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.LoginForm.resources
