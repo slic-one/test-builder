@@ -81,6 +81,13 @@ namespace TestClient
             {
                 ListViewItem li = new ListViewItem(a.ToString());
                 li.Tag = a;
+
+                if (a.isSelected) // highlight if already was selected
+                {
+                    li.BackColor = Color.LightGray;
+                    li.Checked = true;
+                }
+
                 listViewAnswers.Items.Add(li);
            }
         }
@@ -97,15 +104,17 @@ namespace TestClient
                 timer1.Stop();
 
                 counterRightAnswers =0;
+                int totalAnswers = qBank.Questions.Count;
                 foreach(var question in qBank.Questions)
                 {
                     foreach(var answer in question.Answers)
                     {
                         //here must be checking is selected answer right or not but it don't work
-                        if (answer.isSelected == answer.isRight)
+                        if (answer.isRight && answer.isSelected)
                         {
                             counterRightAnswers++;
                         }
+                       
                     }
                 }
 
@@ -114,14 +123,30 @@ namespace TestClient
                 double spentTime = 40.00 - (min + sec);
 
 
-                MessageBox.Show(String.Format("Ваш результат {0} правильних відповідей з {1} за {2:0.0} хвилин", counterRightAnswers, qBank.Questions.Count,  spentTime));
+                MessageBox.Show(String.Format("Ваш результат {0} правильних відповідей з {1} за {2:0.0} хвилин", counterRightAnswers, totalAnswers,  spentTime));
 
                 using (StreamWriter writer = new StreamWriter(studentGroup+"Rezults.txt", true))
                 {
                     writer.WriteLine(String.Format("{0}  {1}  {2} -результат {3} з {4} час {5:0.0} хвилин", DateTime.Now, studentName, studentSurname, counterRightAnswers, qBank.Questions.Count, spentTime));
-                   
                 }
             }
+        }
+
+        private void listViewAnswers_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            var answer = listViewAnswers.Items[e.Index].Tag as Answer;
+
+            if (e.CurrentValue == CheckState.Unchecked)
+            {
+                answer.isSelected = true;
+                listViewAnswers.Items[e.Index].BackColor = Color.LightGray;
+            }
+            else
+            {
+                answer.isSelected = false;
+                listViewAnswers.Items[e.Index].BackColor = Color.White;
+            }
+
         }
     }
 }
