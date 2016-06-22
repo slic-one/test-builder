@@ -9,10 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 namespace TestBuilderAdmin
+
 {
+    ///Class for autorization a client
+    /**
+    Check login and password of a client
+    */ 
     public partial class Autorization : Form
     {
-        bool isAdmin;
+        bool isAdmin; 
         bool autorizationComplete;
 
         public Autorization()
@@ -62,6 +67,13 @@ namespace TestBuilderAdmin
                 MessageBox.Show("Login or password is incorrect please try again!");
             }
         }
+        
+        /** 
+        *Write information about user to logHistory.txt in current date and time
+        \brief Add login information about user to file
+        \param user  information about user(name, surname,login, password)
+        \author Nazar
+        */
         private void addLog(string user)
         {
             using (StreamWriter writer = new StreamWriter("logHistory.txt",true))
