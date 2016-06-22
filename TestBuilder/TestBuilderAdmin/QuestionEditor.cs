@@ -9,7 +9,14 @@ using System.IO;
 
 namespace TestBuilderAdmin
 {
-    public partial class QuestionEditorForm : Form
+	/**
+		\brief Form for editing questions/answers
+		\author Slic
+		\version 1.2
+	* Includes question editor, document editor
+	* saves changes to a specified .xml file
+	*/
+	public partial class QuestionEditorForm : Form
     {
         QuestionsBank qBank;
 
@@ -31,6 +38,9 @@ namespace TestBuilderAdmin
             saveXmlFileDialog.Filter = "Xml Files (.xml)|*.xml";
         }
 
+		/*!
+		Adds answer to a list
+		*/
         private void buttonAddAnswer_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxAnswerEditor.Text))
@@ -53,6 +63,12 @@ namespace TestBuilderAdmin
             textBoxAnswerEditor.Focus();
         }
 
+		/*!
+		Adds question to the DocumentEditor
+		\param sender Control, that sent event
+		\param e Event arguments for sender
+		\throw NullReferenceException if one of objects, used by method, is not initialised
+		*/
         private void buttonSaveQuestion_Click(object sender, EventArgs e)
         {
             Question toSave = new Question();
@@ -99,7 +115,7 @@ namespace TestBuilderAdmin
             listBoxQuestions.DataSource = qBank.Questions;
 
         }
-
+		
         private void clearQuestionEditor()
         {
             textBoxQuestionEditor.Clear();
