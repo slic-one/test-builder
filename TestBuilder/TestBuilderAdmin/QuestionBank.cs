@@ -5,12 +5,16 @@ using System.Xml.Linq;
 
 namespace TestBuilderAdmin
 {
+	/**
+	* @version 2.0
+	* @author Yaroslaw Khaba
+	*/
     class QuestionsBank
     {
-        //file location with qestions
+
         public string xmlFileLocation;
 
-        // main qestions theme like: "c++", "biology"...
+        /// властивість для зазначення теми запитань
         public string Topic { get; set; }
         public List<Question> Questions;
 
@@ -20,7 +24,13 @@ namespace TestBuilderAdmin
             Topic = null;
         }
 
-        //returns an instance of this class with filled questions from xml
+       /**
+		\brief зчитує xml файл і переводить його в клас.
+		\full метод приймає стрічку з посиланням на xml файл із запитаннями, 
+		розпарсує дані, і переводить їх в класи.
+		\param fileLocation шлях до місця xml файлу.
+		\return QuestionBank генерований з xml файлу клас, що містить запитання та їх відповіді.
+	   */
         public static QuestionsBank LoadFromXml(string fileLocation)
         {
             var resultQuestionBank = new QuestionsBank();
@@ -58,7 +68,12 @@ namespace TestBuilderAdmin
             return resultQuestionBank;
         }
 
-        //saves current data by moving it to xml format
+        /**
+		\brief запис бази питань у файл.
+		\full Записує за вказаним шляхом дані цього класу в xml файл.
+		\param fileLocation шлях в місце збереження файлу.
+		\throw Exception неможливо записати в даному місці.
+		*/
         public void SaveToXml(string fileLocation)
         {
             XDocument xmlDocument = new XDocument(new XDeclaration("1.1", "utf-8", "yes"));
