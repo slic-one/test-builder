@@ -47,24 +47,23 @@
             // 
             this.comboBoxSubjects.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.comboBoxSubjects.FormattingEnabled = true;
             this.comboBoxSubjects.Items.AddRange(new object[] {
             "C++",
             "C#"});
-            this.comboBoxSubjects.Location = new System.Drawing.Point(140, 12);
-            this.comboBoxSubjects.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBoxSubjects.MinimumSize = new System.Drawing.Size(73, 0);
+            this.comboBoxSubjects.Location = new System.Drawing.Point(93, 8);
+            this.comboBoxSubjects.MinimumSize = new System.Drawing.Size(50, 0);
             this.comboBoxSubjects.Name = "comboBoxSubjects";
-            this.comboBoxSubjects.Size = new System.Drawing.Size(922, 28);
+            this.comboBoxSubjects.Size = new System.Drawing.Size(616, 25);
             this.comboBoxSubjects.TabIndex = 0;
             this.comboBoxSubjects.Text = " subject list";
             // 
             // buttonBeginTest
             // 
-            this.buttonBeginTest.Location = new System.Drawing.Point(18, 9);
-            this.buttonBeginTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonBeginTest.Location = new System.Drawing.Point(12, 6);
             this.buttonBeginTest.Name = "buttonBeginTest";
-            this.buttonBeginTest.Size = new System.Drawing.Size(112, 35);
+            this.buttonBeginTest.Size = new System.Drawing.Size(75, 27);
             this.buttonBeginTest.TabIndex = 1;
             this.buttonBeginTest.Text = "Begin test";
             this.buttonBeginTest.UseVisualStyleBackColor = true;
@@ -79,10 +78,9 @@
             this.labelTimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTimer.AutoSize = true;
             this.labelTimer.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTimer.Location = new System.Drawing.Point(1215, 9);
-            this.labelTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTimer.Location = new System.Drawing.Point(810, 6);
             this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(60, 22);
+            this.labelTimer.Size = new System.Drawing.Size(42, 14);
             this.labelTimer.TabIndex = 3;
             this.labelTimer.Text = "00:00";
             // 
@@ -92,23 +90,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewAnswers.CheckBoxes = true;
+            this.listViewAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.listViewAnswers.FullRowSelect = true;
-            this.listViewAnswers.Location = new System.Drawing.Point(330, 242);
-            this.listViewAnswers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listViewAnswers.Location = new System.Drawing.Point(220, 157);
             this.listViewAnswers.Name = "listViewAnswers";
-            this.listViewAnswers.Size = new System.Drawing.Size(946, 481);
+            this.listViewAnswers.Size = new System.Drawing.Size(632, 314);
             this.listViewAnswers.TabIndex = 4;
             this.listViewAnswers.UseCompatibleStateImageBehavior = false;
             this.listViewAnswers.View = System.Windows.Forms.View.List;
+            this.listViewAnswers.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listViewAnswers_ItemCheck);
             // 
             // labelSubjectError
             // 
             this.labelSubjectError.AutoSize = true;
             this.labelSubjectError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelSubjectError.Location = new System.Drawing.Point(20, 49);
-            this.labelSubjectError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSubjectError.Location = new System.Drawing.Point(12, 36);
             this.labelSubjectError.Name = "labelSubjectError";
-            this.labelSubjectError.Size = new System.Drawing.Size(136, 20);
+            this.labelSubjectError.Size = new System.Drawing.Size(93, 13);
             this.labelSubjectError.TabIndex = 5;
             this.labelSubjectError.Text = "Pick a subject first";
             this.labelSubjectError.Visible = false;
@@ -119,61 +117,54 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxQuestion.FormattingEnabled = true;
-            this.listBoxQuestion.ItemHeight = 20;
-            this.listBoxQuestion.Location = new System.Drawing.Point(18, 118);
-            this.listBoxQuestion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxQuestion.Location = new System.Drawing.Point(12, 77);
             this.listBoxQuestion.Name = "listBoxQuestion";
-            this.listBoxQuestion.Size = new System.Drawing.Size(296, 604);
+            this.listBoxQuestion.Size = new System.Drawing.Size(199, 394);
             this.listBoxQuestion.TabIndex = 6;
             this.listBoxQuestion.SelectedIndexChanged += new System.EventHandler(this.listBoxQuestion_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 91);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(15, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Questions list:";
             // 
             // textBoxQuestion
             // 
-            this.textBoxQuestion.Location = new System.Drawing.Point(330, 91);
-            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxQuestion.Location = new System.Drawing.Point(220, 59);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
             this.textBoxQuestion.ShortcutsEnabled = false;
-            this.textBoxQuestion.Size = new System.Drawing.Size(936, 102);
+            this.textBoxQuestion.Size = new System.Drawing.Size(625, 68);
             this.textBoxQuestion.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(330, 212);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(220, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Answers:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(330, 55);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(220, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "Question";
             // 
             // buttonEndTest
             // 
-            this.buttonEndTest.Location = new System.Drawing.Point(18, 12);
-            this.buttonEndTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonEndTest.Location = new System.Drawing.Point(12, 8);
             this.buttonEndTest.Name = "buttonEndTest";
-            this.buttonEndTest.Size = new System.Drawing.Size(112, 35);
+            this.buttonEndTest.Size = new System.Drawing.Size(75, 25);
             this.buttonEndTest.TabIndex = 11;
             this.buttonEndTest.Text = "End test";
             this.buttonEndTest.UseVisualStyleBackColor = true;
@@ -181,10 +172,9 @@
             // 
             // TestClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 734);
-            this.Controls.Add(this.buttonEndTest);
+            this.ClientSize = new System.Drawing.Size(857, 477);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxQuestion);
@@ -195,8 +185,8 @@
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.buttonBeginTest);
             this.Controls.Add(this.comboBoxSubjects);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(289, 278);
+            this.Controls.Add(this.buttonEndTest);
+            this.MinimumSize = new System.Drawing.Size(198, 194);
             this.Name = "TestClient";
             this.Text = "Test client";
             this.ResumeLayout(false);
