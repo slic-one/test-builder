@@ -18,3 +18,13 @@ H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.P
 H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.csproj.GenerateResource.Cache
 H:\Study\SvnGid\NazLog\test-builder\TestClient\TestClient\obj\Debug\TestClient.LoginForm.resources
 C:\Users\Great\Desktop\TeamGit\test-builder\test-builder\TestClient\TestClient\obj\Debug\TestClient.LoginForm.resources
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\bin\Debug\TestClient.exe.config
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\obj\Debug\TestClient.exe
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\obj\Debug\TestClient.pdb
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\bin\Debug\TestClient.exe
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\bin\Debug\TestClient.pdb
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\obj\Debug\TestClient.csprojResolveAssemblyReference.cache
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\obj\Debug\TestClient.LoginForm.resources
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\obj\Debug\TestClient.TestClient.resources
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\obj\Debug\TestClient.Properties.Resources.resources
+E:\Study\SvnGid\fullProject\test-builder\TestClient\TestClient\obj\Debug\TestClient.csproj.GenerateResource.Cache

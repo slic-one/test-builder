@@ -104,7 +104,7 @@ namespace TestClient
                 timer1.Stop();
 
                 counterRightAnswers =0;
-                int totalAnswers = 0;
+                int totalAnswers = qBank.Questions.Count;
                 foreach(var question in qBank.Questions)
                 {
                     foreach(var answer in question.Answers)
@@ -114,7 +114,7 @@ namespace TestClient
                         {
                             counterRightAnswers++;
                         }
-                        totalAnswers++;
+                       
                     }
                 }
 
